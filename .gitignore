@@ -1,0 +1,32 @@
+# Symfony / PHP build artifacts
+/vendor/
+/var/
+/public/build/
+/public/bundles/
+
+# Environment & local config
+.env.local
+.env.*.local
+/.env.local.php
+/config/services_local.yaml
+/config/packages/*_local.yaml
+
+# Tool caches
+.phpunit.result.cache
+.phpunit.cache/
+/.php-cs-fixer.cache
+/.php-cs-fixer.php
+/coverage/
+/var/coverage/
+
+# Node & frontend
+/node_modules/
+/yarn-error.log
+/npm-debug.log
+/pnpm-debug.log
+
+# IDE & OS metadata
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
