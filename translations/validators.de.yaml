@@ -1,0 +1,9 @@
+registration:
+  form:
+    error:
+      email_blank: "Bitte gib deine E-Mail-Adresse ein."
+      email_invalid: "Bitte gib eine gültige E-Mail-Adresse ein."
+      accept_terms: "Bitte akzeptiere die AGB, um fortzufahren."
+      accept_privacy: "Bitte stimme der Datenschutzerklärung zu."
+      password_blank: "Bitte lege ein Passwort fest."
+      password_length: "Das Passwort muss mindestens {{ limit }} Zeichen lang sein."

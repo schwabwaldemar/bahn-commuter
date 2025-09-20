@@ -1,0 +1,9 @@
+registration:
+  form:
+    error:
+      email_blank: "Please enter your email address."
+      email_invalid: "Please enter a valid email address."
+      accept_terms: "You must accept the terms to continue."
+      accept_privacy: "Please consent to the privacy policy to continue."
+      password_blank: "Please choose a password."
+      password_length: "Your password should be at least {{ limit }} characters long."

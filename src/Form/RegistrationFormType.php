@@ -6,9 +6,11 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email as EmailConstraint;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -18,9 +20,13 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', options: [
+            ->add('email', EmailType::class, [
                 'label' => 'registration.form.email',
                 'row_attr' => ['class' => 'form-control'],
+                'constraints' => [
+                    new NotBlank(message: 'registration.form.error.email_blank'),
+                    new EmailConstraint(message: 'registration.form.error.email_invalid'),
+                ],
             ])
             ->add('locale', ChoiceType::class, [
                 'label' => 'registration.form.locale',

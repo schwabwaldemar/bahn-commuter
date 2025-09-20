@@ -1,15 +1,18 @@
+@import './design-tokens.css';
+
 :root {
     color-scheme: light;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-base), serif;
     line-height: 1.6;
-    background-color: #f4f6fb;
-    color: #1f2937;
+    background-color: var(--color-neutral-050);
+    color: var(--color-neutral-900);
 }
 
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 116, 144, 0.08));
+    background: linear-gradient(135deg, rgba(0, 91, 187, 0.12), rgba(10, 116, 209, 0.10));
+    color: var(--color-neutral-900);
 }
 
 a {
@@ -17,159 +20,194 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
+    color: var(--color-brand-primary);
 }
 
 .page-shell {
-    max-width: 48rem;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
+    max-width: 960px;
+    margin: var(--spacing-xxl) auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .card {
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-    padding: 2.75rem;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-elevated);
+    padding: var(--spacing-xxl) var(--spacing-xl);
 }
 
 .language-switch {
     display: flex;
     justify-content: flex-end;
-    gap: 0.75rem;
+    gap: var(--spacing-sm);
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
 }
 
 .language-switch a {
-    text-decoration: none;
-    color: #6b7280;
+    position: relative;
+    padding-bottom: var(--spacing-xxs);
+    color: var(--color-neutral-600);
     transition: color 0.2s ease;
 }
 
 .language-switch a.active {
-    color: #111827;
-    font-weight: 600;
+    color: var(--color-brand-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.language-switch a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-brand-primary);
+    border-radius: var(--radius-sm);
 }
 
 .alert {
-    border-radius: 12px;
-    padding: 0.9rem 1.1rem;
-    margin-bottom: 1rem;
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
     font-size: 0.95rem;
+    border-left: 4px solid transparent;
 }
 
 .alert-success {
-    background: #ecfdf5;
-    border: 1px solid #a7f3d0;
-    color: #047857;
+    background: rgba(46, 172, 102, 0.12);
+    border-color: var(--color-success);
+    color: var(--color-neutral-700);
 }
 
 .alert-error {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
-    color: #b91c1c;
+    background: rgba(214, 69, 69, 0.12);
+    border-color: var(--color-error);
+    color: var(--color-neutral-700);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: var(--spacing-lg);
 }
 
 .form-control {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: var(--spacing-xs);
 }
 
 .form-control label {
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     font-size: 0.95rem;
+    color: var(--color-neutral-900);
 }
 
 .form-control input,
 .form-control select {
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
     font-size: 1rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: var(--color-surface);
+    color: var(--color-neutral-900);
 }
 
 .form-control input:focus,
 .form-control select:focus {
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+    border-color: var(--color-brand-primary);
+    box-shadow: var(--focus-ring);
 }
 
 .checkbox-control {
     display: flex;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: var(--spacing-sm);
 }
 
 .checkbox-control input {
-    margin-top: 0.3rem;
+    margin-top: 4px;
 }
 
 .checkbox-control label {
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-700);
 }
 
 .button-primary {
     align-self: flex-start;
-    padding: 0.8rem 1.8rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: #ffffff;
-    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--radius-pill);
+    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-primary-dark));
+    color: #FFFFFF;
+    font-weight: var(--font-weight-semibold);
     font-size: 1rem;
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 0.3px;
 }
 
-.button-primary:hover {
+.button-primary:hover,
+.button-primary:focus {
     transform: translateY(-1px);
-    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
+    box-shadow: var(--shadow-elevated-hover);
+}
+
+.button-primary:focus {
+    outline: none;
 }
 
 .page-title {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
+    font-size: 2.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-neutral-900);
 }
 
 .page-subtitle {
-    color: #6b7280;
-    margin-bottom: 2rem;
+    color: var(--color-neutral-600);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.05rem;
 }
 
 .legal-section + .legal-section {
-    margin-top: 1.75rem;
+    margin-top: var(--spacing-xl);
 }
 
 .legal-section h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+    margin-bottom: var(--spacing-xs);
 }
 
 .hero {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 4rem var(--spacing-xl);
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 3vw, 3.25rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 5vw, 3.25rem);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-neutral-900);
 }
 
 .hero p {
     font-size: 1.1rem;
-    color: #4b5563;
-    margin-bottom: 2rem;
+    color: var(--color-neutral-600);
+    margin-bottom: var(--spacing-xl);
 }
 
 .hero .button-primary {
@@ -177,8 +215,12 @@ form {
 }
 
 @media (max-width: 600px) {
+    .page-shell {
+        padding: 0 var(--spacing-md);
+    }
+
     .card {
-        padding: 2rem;
+        padding: var(--spacing-xl) var(--spacing-lg);
     }
 
     .language-switch {

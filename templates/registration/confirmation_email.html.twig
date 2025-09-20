@@ -1,11 +1,64 @@
 {% trans_default_domain 'messages' %}
 
-<h1>{{ 'registration.email.greeting'|trans }}</h1>
-
-<p>
-    {{ 'registration.email.body'|trans }}<br><br>
-    <a href="{{ signedUrl|raw }}">{{ 'registration.email.cta'|trans }}</a>
-    {{ 'registration.email.expiration'|trans({'%expires%': expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle')}) }}
-</p>
-
-<p>{{ 'registration.email.signature'|trans }}</p>
+<!DOCTYPE html>
+<html lang="{{ locale|default('en') }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ 'registration.email.subject'|trans }}</title>
+    </head>
+    <body style="margin:0; padding:0; background-color:#F4F6FA; font-family:'Inter','Segoe UI','Helvetica Neue',Arial,sans-serif; color:#0F1C2E;">
+        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color:#F4F6FA; padding:24px 16px;">
+            <tr>
+                <td align="center">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width:600px; background-color:#FFFFFF; border-radius:16px; overflow:hidden; box-shadow:0 8px 24px rgba(15,28,46,0.08);">
+                        <tr>
+                            <td style="background-color:#005BBB; padding:24px 32px; text-align:left;">
+                                <span style="display:inline-block; font-size:20px; line-height:24px; font-weight:600; letter-spacing:0.4px; color:#FFFFFF; text-transform:none;">Bahn Commuter</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:40px 32px 24px 32px;">
+                                <p style="margin:0 0 16px 0; font-size:28px; line-height:34px; font-weight:600; color:#0F1C2E;">{{ 'registration.email.greeting'|trans }}</p>
+                                <p style="margin:0 0 24px 0; font-size:16px; line-height:26px; color:#45546B;">
+                                    {{ 'registration.email.body'|trans }}
+                                </p>
+                                <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 24px 0;">
+                                    <tr>
+                                        <td>
+                                            <a href="{{ signedUrl|raw }}" style="display:inline-block; background-color:#005BBB; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:16px; line-height:20px; padding:14px 28px; border-radius:8px; letter-spacing:0.3px;">
+                                                {{ 'registration.email.cta'|trans }}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p style="margin:0 0 24px 0; font-size:14px; line-height:22px; color:#45546B;">
+                                    {{ 'registration.email.expiration'|trans({'%expires%': expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle')}) }}
+                                </p>
+                                <p style="margin:0; font-size:16px; line-height:24px; font-weight:500; color:#0F1C2E;">{{ 'registration.email.signature'|trans }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 32px 32px 32px;">
+                                <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color:#F4F6FA; border-radius:12px;">
+                                    <tr>
+                                        <td style="padding:16px 20px; font-size:13px; line-height:20px; color:#45546B;">
+                                            <strong style="display:inline-block; margin-bottom:4px; color:#0F1C2E;">Tipp:</strong>
+                                            <span>Füge <a href="mailto:no-reply@bahn-commuter.ddev.site" style="color:#005BBB; text-decoration:none;">no-reply@bahn-commuter.ddev.site</a> zu deinen Kontakten hinzu, damit unsere Hinweise zuverlässig ankommen.</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 32px 32px 32px; text-align:center; font-size:12px; line-height:18px; color:#728199;">
+                                <p style="margin:0 0 8px 0;">© {{ "now"|date('Y') }} Bahn Commuter</p>
+                                <p style="margin:0;">{{ absolute_url(path('app_home', {'_locale': locale|default('en')})) }}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

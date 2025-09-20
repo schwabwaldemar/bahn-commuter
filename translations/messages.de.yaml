@@ -24,6 +24,8 @@ registration:
     accept_privacy: "Ich stimme der <a href=\"/de/legal/privacy\" target=\"_blank\">Datenschutzerklärung</a> zu"
     password: "Passwort"
     error:
+      email_blank: "Bitte gib deine E-Mail-Adresse ein."
+      email_invalid: "Bitte gib eine gültige E-Mail-Adresse ein."
       accept_terms: "Bitte akzeptiere die AGB, um fortzufahren."
       accept_privacy: "Bitte stimme der Datenschutzerklärung zu."
       password_blank: "Bitte lege ein Passwort fest."

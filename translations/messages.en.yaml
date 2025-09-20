@@ -24,6 +24,8 @@ registration:
     accept_privacy: "I agree to the <a href=\"/legal/privacy\" target=\"_blank\">Data Protection Policy</a>"
     password: "Password"
     error:
+      email_blank: "Please enter your email address."
+      email_invalid: "Please enter a valid email address."
       accept_terms: "You must accept the terms to continue."
       accept_privacy: "Please consent to the privacy policy to continue."
       password_blank: "Please choose a password."
