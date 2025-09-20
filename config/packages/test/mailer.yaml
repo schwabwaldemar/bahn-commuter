@@ -1,0 +1,4 @@
+framework:
+    mailer:
+        message_bus: null
+        dsn: 'null://null'

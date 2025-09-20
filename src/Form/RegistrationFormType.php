@@ -34,9 +34,7 @@ class RegistrationFormType extends AbstractType
             ->add('acceptTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
-                    new IsTrue([
-                        'message' => 'registration.form.error.accept_terms',
-                    ]),
+                    new IsTrue(message: 'registration.form.error.accept_terms'),
                 ],
                 'label' => 'registration.form.accept_terms',
                 'label_html' => true,
@@ -46,9 +44,7 @@ class RegistrationFormType extends AbstractType
             ->add('acceptPrivacy', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
-                    new IsTrue([
-                        'message' => 'registration.form.error.accept_privacy',
-                    ]),
+                    new IsTrue(message: 'registration.form.error.accept_privacy'),
                 ],
                 'label' => 'registration.form.accept_privacy',
                 'label_html' => true,
@@ -61,15 +57,13 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'registration.form.error.password_blank',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'registration.form.error.password_length',
+                    new NotBlank(message: 'registration.form.error.password_blank'),
+                    new Length(
+                        min: 8,
+                        minMessage: 'registration.form.error.password_length',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
+                        max: 4096,
+                    ),
                 ],
                 'label' => 'registration.form.password',
                 'row_attr' => ['class' => 'form-control'],

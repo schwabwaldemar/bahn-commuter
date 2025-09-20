@@ -1,0 +1,6 @@
+services:
+    mailer.message_logger_listener:
+        class: App\Test\EventListener\PersistentMessageLoggerListener
+        tags:
+            - { name: kernel.event_subscriber }
+            - { name: kernel.reset, method: reset }
