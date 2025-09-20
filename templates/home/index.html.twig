@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+
+{% block title %}{{ 'home.title'|trans }}{% endblock %}
+
+{% block body %}
+    <section class="hero">
+        <h1>{{ 'home.headline'|trans }}</h1>
+        <p>{{ 'home.tagline'|trans }}</p>
+        <a class="button-primary" href="{{ path('app_register', {'_locale': app.request.locale}) }}">{{ 'home.cta'|trans }}</a>
+    </section>
+{% endblock %}

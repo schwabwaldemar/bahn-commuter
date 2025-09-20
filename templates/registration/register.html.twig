@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+
+{% block title %}{{ 'registration.title'|trans }}{% endblock %}
+
+{% block body %}
+    {% set currentRoute = app.request.attributes.get('_route') %}
+    {% set currentParams = app.request.attributes.get('_route_params') %}
+
+    <main class="page-shell">
+        <div class="language-switch">
+            <a href="{{ path(currentRoute, currentParams|merge({'_locale': 'en'})) }}" class="{{ app.request.locale == 'en' ? 'active' : '' }}">{{ 'registration.locale.switch_en'|trans }}</a>
+            <span aria-hidden="true">•</span>
+            <a href="{{ path(currentRoute, currentParams|merge({'_locale': 'de'})) }}" class="{{ app.request.locale == 'de' ? 'active' : '' }}">{{ 'registration.locale.switch_de'|trans }}</a>
+        </div>
+
+        <section class="card">
+            {% for flash_success in app.flashes('success') %}
+                <div class="alert alert-success">{{ flash_success|trans }}</div>
+            {% endfor %}
+
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-error">{{ flash_error }}</div>
+            {% endfor %}
+
+            <h1 class="page-title">{{ 'registration.title'|trans }}</h1>
+            <p class="page-subtitle">{{ 'registration.subtitle'|trans }}</p>
+
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.locale) }}
+                {{ form_row(registrationForm.plainPassword) }}
+                {{ form_row(registrationForm.acceptTerms) }}
+                {{ form_row(registrationForm.acceptPrivacy) }}
+
+                <button type="submit" class="button-primary">{{ 'registration.submit'|trans }}</button>
+            {{ form_end(registrationForm) }}
+        </section>
+    </main>
+{% endblock %}

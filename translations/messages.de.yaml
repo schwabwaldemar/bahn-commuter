@@ -1,0 +1,60 @@
+registration:
+  title: "Pendlerkonto anlegen"
+  subtitle: "Aktiviere Benachrichtigungen für deine Pendelstrecken in wenigen Schritten."
+  submit: "Konto erstellen"
+  email:
+    subject: "Bitte bestätige dein Bahn-Commuter-Konto"
+    greeting: "Hallo!"
+    body: "Bitte bestätige deine E-Mail-Adresse über den folgenden Link."
+    cta: "E-Mail bestätigen"
+    expiration: "Der Link läuft in %expires% ab."
+    signature: "Dein Bahn-Commuter-Team"
+  flash:
+    check_email: "Wir haben dir eine Bestätigungs-E-Mail geschickt. Bitte aktiviere dein Konto über den Link."
+    email_verified: "Danke! Deine E-Mail-Adresse wurde bestätigt. Du kannst dich jetzt anmelden."
+  locale:
+    switch_en: "English"
+    switch_de: "Deutsch"
+  form:
+    email: "E-Mail-Adresse"
+    locale: "Bevorzugte Sprache"
+    locale_en: "Englisch"
+    locale_de: "Deutsch"
+    accept_terms: "Ich akzeptiere die <a href=\"/de/legal/terms\" target=\"_blank\">Allgemeinen Geschäftsbedingungen</a>"
+    accept_privacy: "Ich stimme der <a href=\"/de/legal/privacy\" target=\"_blank\">Datenschutzerklärung</a> zu"
+    password: "Passwort"
+    error:
+      accept_terms: "Bitte akzeptiere die AGB, um fortzufahren."
+      accept_privacy: "Bitte stimme der Datenschutzerklärung zu."
+      password_blank: "Bitte lege ein Passwort fest."
+      password_length: "Das Passwort muss mindestens {{ limit }} Zeichen lang sein."
+home:
+  title: "Verspätungswarnungen für deine Strecke"
+  headline: "Sei bei Bahnverspätungen einen Schritt voraus"
+  tagline: "Abonniere deine täglichen Strecken und wir informieren dich sofort über Störungen oder Ausfälle."
+  cta: "Jetzt Konto erstellen"
+legal:
+  terms:
+    title: "Allgemeine Geschäftsbedingungen"
+    intro: "Diese Bedingungen beschreiben, wie Bahn Commuter dich über Verspätungen informiert."
+    section_use:
+      title: "Nutzung"
+      body: "Du verpflichtest dich, korrekte Streckendaten anzugeben und den Dienst ausschließlich für persönliche Benachrichtigungen zu verwenden."
+    section_notifications:
+      title: "Benachrichtigungen"
+      body: "Wir versenden Hinweise auf Basis öffentlicher Bahndaten. Die Zustellung kann je nach E-Mail-Anbieter variieren."
+    section_changes:
+      title: "Änderungen"
+      body: "Wir können diese Bedingungen bei neuen Funktionen anpassen und informieren dich vor wesentlichen Änderungen per E-Mail."
+  privacy:
+    title: "Datenschutz"
+    intro: "Wir erheben nur die Daten, die für verlässliche Pendlerwarnungen notwendig sind."
+    section_data:
+      title: "Welche Daten wir speichern"
+      body: "Wir speichern deine E-Mail-Adresse, das gehashte Passwort, die bevorzugte Sprache und Zeitstempel deiner Einwilligungen."
+    section_retention:
+      title: "Aufbewahrung"
+      body: "Kontodaten bleiben während eines aktiven Abos bestehen und werden innerhalb von 30 Tagen nach Kündigung gelöscht."
+    section_rights:
+      title: "Deine Rechte"
+      body: "Du kannst unter support@bahn-commuter.ddev.site jederzeit Auskunft, Berichtigung oder Löschung deiner Daten anfordern."

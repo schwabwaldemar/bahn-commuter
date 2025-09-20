@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+
+{% block title %}{{ 'legal.privacy.title'|trans }}{% endblock %}
+
+{% block body %}
+    <main class="page-shell">
+        <article class="card">
+            <h1 class="page-title">{{ 'legal.privacy.title'|trans }}</h1>
+            <p class="page-subtitle">{{ 'legal.privacy.intro'|trans }}</p>
+            <section class="legal-section">
+                <h2>{{ 'legal.privacy.section_data.title'|trans }}</h2>
+                <p>{{ 'legal.privacy.section_data.body'|trans }}</p>
+            </section>
+            <section class="legal-section">
+                <h2>{{ 'legal.privacy.section_retention.title'|trans }}</h2>
+                <p>{{ 'legal.privacy.section_retention.body'|trans }}</p>
+            </section>
+            <section class="legal-section">
+                <h2>{{ 'legal.privacy.section_rights.title'|trans }}</h2>
+                <p>{{ 'legal.privacy.section_rights.body'|trans }}</p>
+            </section>
+        </article>
+    </main>
+{% endblock %}

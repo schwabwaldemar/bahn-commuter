@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 - `src/` holds PSR-4 code (e.g., `App\\Station`, `App\\Schedule`); keep services cohesive and constructor-injected.
-- Symfony config belongs in `config/`; split domain-specific wiring into files under `config/packages/` instead of bloating `services.yaml`.
+- Symfony config stays in `config/`; prefer feature files under `config/packages/` over bloating `services.yaml`.
 - Doctrine entities and repositories live in `src/Entity/` and `src/Repository/`; migrations are versioned in `migrations/`.
 - UI resources: Twig templates in `templates/`, Encore sources in `assets/`, compiled bundles in `public/build/`.
 - Tests mirror namespaces inside `tests/` with optional `Unit/`, `Integration/`, and `Functional/` subfolders.
@@ -12,7 +12,7 @@
 - `ddev composer install` installs PHP deps; add packages with `ddev composer require vendor/package`.
 - Database lifecycle: `ddev exec bin/console doctrine:database:create`, `doctrine:migrations:migrate`, `make:migration` for schema diffs.
 - `ddev exec bin/phpunit` runs the suite; append `--coverage-html var/coverage` when validating coverage.
-- Front-end: `ddev exec npm install` once, `ddev exec npm run dev` for local builds, `ddev exec npm run dev -- --watch` while iterating, and `ddev exec npm run build` for production bundles.
+- Front-end: run `ddev exec npm install` once, `ddev exec npm run dev` while building, and `ddev exec npm run build` for production bundles.
 
 ## Coding Style & Naming Conventions
 - PHP 8.3, `declare(strict_types=1);`, PSR-12 formatting, PascalCase classes, camelCase methods, UPPER_SNAKE_CASE constants.
@@ -33,3 +33,7 @@
 - Manage entrypoints in `webpack.config.js` via `Encore.addEntry('app', './assets/app.ts')`.
 - Assets referenced in Twig via `{{ asset('build/app.css') }}`; static files (fonts/images) stay under `assets/`.
 - Run `ddev exec npm run build` before releases to ensure optimized output in `public/build/`.
+
+## Environment & Services
+- Outbound mail is routed through DDEV Mailpit; keep `MAILER_DSN="smtp://mailpit:1025"` (already set in `.env`) and review messages at `https://bahn-commuter.ddev.site:8026`.
+- `.env.local` is for overrides only; store secrets via Symfony vault, never commit them.

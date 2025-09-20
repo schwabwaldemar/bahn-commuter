@@ -1,0 +1,60 @@
+registration:
+  title: "Create your commuter account"
+  subtitle: "Activate alerts for your daily routes in just a few clicks."
+  submit: "Create account"
+  email:
+    subject: "Confirm your Bahn Commuter account"
+    greeting: "Hi there!"
+    body: "Please confirm your email address by clicking the link below."
+    cta: "Confirm my email"
+    expiration: "This link will expire in %expires%."
+    signature: "Your Bahn Commuter team"
+  flash:
+    check_email: "We sent you a confirmation email. Please click the link to activate your account."
+    email_verified: "Thanks! Your email address is verified. You can log in now."
+  locale:
+    switch_en: "English"
+    switch_de: "Deutsch"
+  form:
+    email: "Email address"
+    locale: "Preferred language"
+    locale_en: "English"
+    locale_de: "German"
+    accept_terms: "I accept the <a href=\"/legal/terms\" target=\"_blank\">Terms & Conditions</a>"
+    accept_privacy: "I agree to the <a href=\"/legal/privacy\" target=\"_blank\">Data Protection Policy</a>"
+    password: "Password"
+    error:
+      accept_terms: "You must accept the terms to continue."
+      accept_privacy: "Please consent to the privacy policy to continue."
+      password_blank: "Please choose a password."
+      password_length: "Your password should be at least {{ limit }} characters long."
+home:
+  title: "Delay alerts for your commute"
+  headline: "Stay ahead of train delays"
+  tagline: "Subscribe to your daily routes and we will notify you as soon as we detect disruptions or cancellations."
+  cta: "Start by creating an account"
+legal:
+  terms:
+    title: "Terms & Conditions"
+    intro: "These terms explain how Bahn Commuter keeps you informed about train disruptions."
+    section_use:
+      title: "Usage"
+      body: "You agree to provide accurate commute information and to use the service only for personal delay notifications."
+    section_notifications:
+      title: "Notifications"
+      body: "We dispatch alerts based on public railway data. Delivery times may vary depending on your email provider."
+    section_changes:
+      title: "Changes"
+      body: "We may update these terms as we add new features. We will notify you by email before material changes take effect."
+  privacy:
+    title: "Data Protection"
+    intro: "We only collect the information we need to send you reliable commute alerts."
+    section_data:
+      title: "What we store"
+      body: "We store your email address, hashed password, preferred language, and acceptance timestamps for auditing purposes."
+    section_retention:
+      title: "Retention"
+      body: "Account data is retained while your subscription is active and deleted within 30 days after cancellation."
+    section_rights:
+      title: "Your rights"
+      body: "Contact support@bahn-commuter.ddev.site to request access, correction, or deletion of your data at any time."

@@ -1,0 +1,11 @@
+{% trans_default_domain 'messages' %}
+
+<h1>{{ 'registration.email.greeting'|trans }}</h1>
+
+<p>
+    {{ 'registration.email.body'|trans }}<br><br>
+    <a href="{{ signedUrl|raw }}">{{ 'registration.email.cta'|trans }}</a>
+    {{ 'registration.email.expiration'|trans({'%expires%': expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle')}) }}
+</p>
+
+<p>{{ 'registration.email.signature'|trans }}</p>
