@@ -1,32 +1,27 @@
-# Symfony / PHP build artifacts
-/vendor/
-/var/
-/public/build/
-/public/bundles/
 
-# Environment & local config
-.env.local
-.env.*.local
+###> symfony/framework-bundle ###
+/.env.local
 /.env.local.php
-/config/services_local.yaml
-/config/packages/*_local.yaml
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
 
-# Tool caches
-.phpunit.result.cache
-.phpunit.cache/
-/.php-cs-fixer.cache
-/.php-cs-fixer.php
-/coverage/
-/var/coverage/
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
 
-# Node & frontend
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+
+###> symfony/webpack-encore-bundle ###
 /node_modules/
-/yarn-error.log
-/npm-debug.log
-/pnpm-debug.log
-
-# IDE & OS metadata
-/.idea/
-/.vscode/
-.DS_Store
-Thumbs.db
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
